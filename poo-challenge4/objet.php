@@ -56,3 +56,18 @@ echo "<br>";
 $pedestrianWay->addVehicle($carWay);
 var_dump($pedestrianWay->getCurrentVehicles());
 echo "<br>";
+
+
+
+echo "frein à main :";
+var_dump($car->getHasParkBrake());
+$car->setParkBrake(true);
+var_dump($car->getHasParkBrake());
+
+try {
+    $car->parkBrakeStart();
+} catch (Exception $e) {
+    echo "Exception received :  " . $e ;
+} finally {
+    echo "Ma voiture roule comme un donut";
+}
