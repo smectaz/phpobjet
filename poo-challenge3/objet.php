@@ -56,3 +56,4 @@ echo "<br>";
 $pedestrianWay->addVehicle($carWay);
 var_dump($pedestrianWay->getCurrentVehicles());
 echo "<br>";
+

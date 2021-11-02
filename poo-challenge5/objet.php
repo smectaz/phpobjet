@@ -57,17 +57,17 @@ $pedestrianWay->addVehicle($carWay);
 var_dump($pedestrianWay->getCurrentVehicles());
 echo "<br>";
 
+$bicycle->setCurrentSpeed(8);
+echo ("Mon vélo roule à " . $bicycle->getCurrentSpeed() . " km/h.Le  switchOn vaut " . $bicycle->switchOn() . ". Le switchOff vaut " . $bicycle->switchOff());
+echo "<br>";
+$bicycle->setCurrentSpeed(20);
+echo ("Mon vélo roule à " . $bicycle->getCurrentSpeed() . " km/h.Le  switchOn vaut " . $bicycle->switchOn() . ". Le switchOff vaut " . $bicycle->switchOff());
+echo "<br>";
 
+$car->setCurrentSpeed(9);
+echo ("Ma voiture roule à " . $car->getCurrentSpeed() . " km/h.Le  switchOn vaut " . $car->switchOn() . ". Le switchOff vaut " . $car->switchOff());
+echo "<br>";
 
-echo "frein à main :";
-var_dump($car->getHasParkBrake());
-$car->setParkBrake(true);
-var_dump($car->getHasParkBrake());
-
-try {
-    $car->parkBrakeStart();
-} catch (Exception $e) {
-    echo "Exception received :  " . $e ;
-} finally {
-    echo "Ma voiture roule comme un donut";
-}
+$car->setCurrentSpeed(130);
+echo ("Ma voiture roule à " . $car->getCurrentSpeed() . " km/h.Le  switchOn vaut " . $car->switchOn() . ". Le switchOff vaut " . $car->switchOff());
+echo "<br>";

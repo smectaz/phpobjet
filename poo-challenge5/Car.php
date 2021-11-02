@@ -1,21 +1,34 @@
 <?php
 
 require_once 'Vehicle.php';
+require_once 'LightableInterface.php';
 
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
-    
-
-    private string $energy;
-    private int $energyLevel;
     public const ALLOWED_ENERGIES = [
         'fuel',
         'electric',
     ];
+
+    private string $energy;
+
+    private int $energyLevel;
+
     public function __construct(string $color, int $nbSeats, string $energy)
     {
         parent::__construct($color, $nbSeats);
         $this->setEnergy($energy);
+    }
+
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+      
+        return false;
     }
 
     public function getEnergy(): string
@@ -40,6 +53,4 @@ class Car extends Vehicle
     {
         $this->energyLevel = $energyLevel;
     }
-
-    
 }
